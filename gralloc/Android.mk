@@ -52,6 +52,8 @@ LOCAL_CFLAGS                  := $(common_flags) $(qmaa_flags) -DLOG_TAG=\"qdgra
                                  -D__QTI_DISPLAY_GRALLOC__
 ifeq ($(TARGET_USES_YCRCB_CAMERA_PREVIEW),true)
     LOCAL_CFLAGS              += -DUSE_YCRCB_CAMERA_PREVIEW
+else ifeq ($(TARGET_USES_YCRCB_VENUS_CAMERA_PREVIEW),true)
+    LOCAL_CFLAGS              += -DUSE_YCRCB_CAMERA_PREVIEW_VENUS
 endif
 
 LOCAL_ADDITIONAL_DEPENDENCIES := $(common_deps)
